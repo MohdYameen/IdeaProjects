@@ -1,0 +1,28 @@
+Java
+Lec : 4th feb 2021
+
+LocalDateTime       5th March
+
+MCQs are only going to be asked from methods of DateTime API
+
+Internationalization : 12/04/2021
+    Local Class     :
+    Properties      :
+
+
+Introduction :
+    * Problem of customizing a program or page for different countries or languages
+    * It would be highly problematic to create and maintain enough different versions to meet the needs of all clients
+      everywhere.
+
+Internationalization :
+    * It is a process of designing an application so that it can be adapted to various regions and languages without
+      engineering changes.
+    * Java is first language to support internationalization.
+    * i18n : abbreviation for internationalization.
+
+    Characterisation :
+        * with the addition od localised data, the same executable can run worldwide.
+
+
+Locale :
