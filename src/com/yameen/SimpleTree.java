@@ -14,17 +14,6 @@ public class SimpleTree {
     }
         public Node root;
        public void createTree(){
-           /* Node first = new Node(6);
-            Node second = new Node(7);
-            Node third = new Node(3);
-            Node forth = new Node(4);
-            Node fifth = new Node(5);
-
-            root = first;
-            first.left = second;
-            first.right = third;
-            second.left = forth;
-            second.right = fifth;  */
 
            root = new Node(5);
            root.left = new Node(4);
