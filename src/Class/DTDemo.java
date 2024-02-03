@@ -25,10 +25,7 @@ public class DTDemo {
 //        pTimeZone();
         pDateTimeFormat();
 
-
-
     }
-
 
     public static void pInstant(){
         Instant it = Instant.now();
@@ -66,9 +63,6 @@ public class DTDemo {
 
 //        Duration diffIndiaRussia = Duration.between(LocalTime.now(), LocalTime.
 
-
-
-
     }
 
     public static void pTimeZone(){
@@ -104,6 +98,5 @@ public class DTDemo {
         DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("EEEE MMM dd, YYYY HH:mm:ss a VV");
         System.out.println(dtf2.format(dt));
     }
-
 
 }
