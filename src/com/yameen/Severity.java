@@ -70,29 +70,6 @@ class CernerRecord{
             cernerRecords.get(i).showRec();
         }
 
-
-        /*
-        System.out.print("Enter patient name : ");
-        String pName = sc.nextLine();
-        System.out.print("Enter Allergy name : ");
-        String aName = sc.nextLine();
-        System.out.print("Enter Symptom : ");
-        String aSymptom = sc.nextLine();
-        System.out.print("Enter Severity : ");
-        String sev = sc.nextLine();
-        Severity aSeverit = Severity.valueOf(sev);
-
-        CernerRecord c2 = new CernerRecord(pName);
-        Allergy al2 = new Allergy(aName,aSymptom,aSeverit);
-        c2.addAllergy(al2);
-        c2.showRec();
-        */
-
-
-
-
-
-
     }
 
 }
