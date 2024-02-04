@@ -1,4 +1,4 @@
-package com.yameen;
+package DSA;
 
 public class SubArrays {
     public static void printSubArrays(int []a){
