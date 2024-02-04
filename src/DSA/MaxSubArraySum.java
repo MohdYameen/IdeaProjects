@@ -1,9 +1,9 @@
-package com.yameen;
+package DSA;
 
 public class MaxSubArraySum {
     public static int maxSubArraySum(int []a){
         int max_sum = Integer.MIN_VALUE;
-        int current_sum =0;
+        int current_sum;
         for (int i =0;i<a.length;i++){
             for(int j=i;j<a.length;j++){
                 current_sum =0;
@@ -30,7 +30,7 @@ public class MaxSubArraySum {
 
     public static int maxSubArraySumUsingPrefix(int []a){
         int [] prefix = prefixArray(a);
-        int currSum = 0;
+        int currSum;
         int maxSum = Integer.MIN_VALUE;
 
         for(int i=0;i<a.length;i++){
@@ -49,9 +49,9 @@ public class MaxSubArraySum {
     public static int kadanesAlgo(int [] a){
         int maxSum = Integer.MIN_VALUE;
         int currSum = 0;
-        for(int i=0;i<a.length;i++){
-            currSum += a[i];
-            if(currSum < 0){
+        for (int j : a) {
+            currSum += j;
+            if (currSum < 0) {
                 currSum = 0;
             }
             maxSum = Math.max(maxSum, currSum);
