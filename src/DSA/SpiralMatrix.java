@@ -42,9 +42,9 @@ public class SpiralMatrix {
             for(int j=0;j<matrix[0].length;j++) matrix[i][j] = sum++;
         }
         //to print matrix
-        for (int[] ints : matrix) {
+        for (int[] i : matrix) {
             for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(ints[j] + "    ");
+                System.out.print(i[j] + "    ");
             }
             System.out.println();
         }
