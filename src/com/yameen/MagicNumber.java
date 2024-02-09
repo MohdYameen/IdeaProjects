@@ -9,7 +9,7 @@ public class MagicNumber {
             System.out.println("Not a magic number");
 
         */
-        int a = 1091;
+        int a = 180;
         int sum =0;
         while(a>0 || sum >9){
             if(a==0){

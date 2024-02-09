@@ -30,7 +30,7 @@ public class TrappingRainwater {
      */
     public static int trapRainWater(int []a){
         System.out.print("Height Array: ");
-
+ 
         for (int j : a) {
             System.out.print(j + ", ");
         }
@@ -71,11 +71,7 @@ public class TrappingRainwater {
 
         }
         System.out.println();
-
         System.out.println("Trapped Water: "+trapped_water);
-
-
-
       return trapped_water;
     }
 
