@@ -14,6 +14,7 @@ public class NQueens {
 
     static void nQueens(char [][]board, int row) {
         if (row == board.length) {
+            count++;
             printBoard(board);
             return;
         }
@@ -27,6 +28,25 @@ public class NQueens {
                 board[row][j] = '-';
             }
         }
+    }
+
+    // this will print only one solution if possible.
+    static boolean nQueensOneSolution(char [][]board, int row) {
+        if (row == board.length) {
+            count++;
+            printBoard(board);
+            return true;
+        }
+        //column
+        for (int j = 0; j < board[row].length; j++) {
+
+            if(isSafe(board, row, j)){
+                board[row][j] = 'Q';
+                if(nQueensOneSolution(board, row + 1)) return true;
+                board[row][j] = '-';
+            }
+        }
+        return false;
     }
 
     static boolean isSafe(char [][]board, int row, int col){
@@ -48,8 +68,11 @@ public class NQueens {
         return true;
     }
 
+    //to count the possible solutions
+    static int count = 0;
+
     public static void main(String[] args) {
-        int n = 4;
+        int n = 3;
         char [][]board = new char[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
@@ -59,5 +82,7 @@ public class NQueens {
 
         //printBoard(board);
         nQueens(board, 0);
+        System.out.println(count);
+        System.out.println(nQueensOneSolution(board, 0));
     }
 }
