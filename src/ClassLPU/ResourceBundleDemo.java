@@ -1,4 +1,4 @@
-package Class;
+package ClassLPU;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -7,7 +7,7 @@ public class ResourceBundleDemo {
 
     public static void main(String[] args) {
 
-        ResourceBundle bundle = ResourceBundle.getBundle("Class//message");
+        ResourceBundle bundle = ResourceBundle.getBundle("ClassLPU//message");
         System.out.println(bundle.getString("greetings"));
 
         bundle = ResourceBundle.getBundle("message", Locale.FRENCH);

@@ -1,4 +1,4 @@
-package Class;
+package ClassLPU;
 
 interface mrInterface{
     int sum(int a, int b);

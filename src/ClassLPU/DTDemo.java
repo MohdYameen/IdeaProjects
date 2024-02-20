@@ -1,4 +1,4 @@
-package Class;
+package ClassLPU;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;

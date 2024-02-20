@@ -1,4 +1,4 @@
-package Class;
+package ClassLPU;
 
 class MyThread1 implements Runnable {
     Thread t;

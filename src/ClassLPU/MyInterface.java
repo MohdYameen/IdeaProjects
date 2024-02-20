@@ -1,4 +1,4 @@
-package Class;
+package ClassLPU;
 //interface
 
 interface iA {      //functional interface, as it has only one abstract method.
