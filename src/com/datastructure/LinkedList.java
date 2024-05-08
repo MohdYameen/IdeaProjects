@@ -1,6 +1,6 @@
 package com.datastructure;
 
-public class LinkedList {
+public class LinkedList<S> {
     static class Node{
         int data;
         Node next;
