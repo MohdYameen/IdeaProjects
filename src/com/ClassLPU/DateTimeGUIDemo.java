@@ -1,4 +1,4 @@
-package ClassLPU;
+package com.ClassLPU;
 
 //import javax.swing.*;
 //import java.awt.*;

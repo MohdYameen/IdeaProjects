@@ -1,3 +1,5 @@
+package com.ClassLPU;
+
 class MyPool {
     int n;
     boolean BS;

@@ -1,4 +1,4 @@
-package ClassLPU;
+package com.ClassLPU;
 
 interface mrInterface{
     int sum(int a, int b);

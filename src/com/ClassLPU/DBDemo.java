@@ -1,4 +1,4 @@
-package ClassLPU;
+package com.ClassLPU;
 
 import java.sql.*;
 import java.util.Scanner;

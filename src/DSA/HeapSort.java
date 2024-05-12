@@ -1,8 +1,5 @@
 package DSA;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class HeapSort {
 
     static void heapify(int [] arr, int n, int i){
@@ -24,7 +21,7 @@ public class HeapSort {
         }
     }
 
-    static void sort(int [] arr){
+    static void heapsort(int [] arr){
 
         int len = arr.length;
 //        for(int i = len/2 -1; i>=0;i--){
@@ -48,20 +45,32 @@ public class HeapSort {
 
     public static void main(String[] args) {
         int [] arr = {22,13,17,11,10,14,12,9,7};
-        ArrayList<Integer> arlist = new ArrayList<Integer>();
-
-        arlist.add(5);
-        arlist.add(3);
-        arlist.add(8);
-        System.out.println(arlist);
-        Collections.sort(arlist, Collections.reverseOrder());
-        System.out.println(arlist);
-//        System.out.println("before heapifying");
-//        printArray(arr);
-        sort(arr);
+//        ArrayList<Integer> arlist = new ArrayList<Integer>();
+//        ArrayList<Integer> arlist2 = new ArrayList<Integer>();
 //
-//        System.out.println("after heapifying");
-//        printArray(arr);
+//        arlist.add(5);
+//        arlist.add(3);
+//        arlist.add(8);
+//
+//        arlist2.add(50);
+//        arlist2.add(30);
+//        arlist2.add(80);
+//        System.out.println(arlist);
+//        System.out.println(arlist2);
+//
+//        arlist.addAll(arlist2);
+//        System.out.println(arlist);
+//        Collections.sort(arlist, Collections.reverseOrder());
+//
+//        System.out.println(arlist);
+        //Collections.sort(arlist, Collections.reverseOrder());
+        //System.out.println(arlist);
+        System.out.println("before heapifying");
+        printArray(arr);
+        heapsort(arr);
+//
+        System.out.println("after heapifying");
+        printArray(arr);
 //
 //        Arrays.sort(arr);
 

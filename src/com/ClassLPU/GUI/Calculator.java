@@ -1,4 +1,4 @@
-package ClassLPU.GUI;
+package com.ClassLPU.GUI;
 import javax.swing.*;
 import java.awt.*;
 

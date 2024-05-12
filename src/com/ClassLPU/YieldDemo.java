@@ -1,4 +1,4 @@
-package ClassLPU;
+package com.ClassLPU;
 
 class MyThread1 implements Runnable {
     Thread t;

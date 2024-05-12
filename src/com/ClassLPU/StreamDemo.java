@@ -1,4 +1,4 @@
-package ClassLPU;
+package com.ClassLPU;
 
 import java.util.ArrayList;
 import java.util.Arrays;
