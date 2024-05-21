@@ -293,6 +293,46 @@ public class LinkedList {
         return merge(newLeft, newRight);
     }
 
+    public void zigZag(){
+        //find Mid
+        Node slow = head;
+        Node fast = head.next;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
+
+        //reverse 2nd half
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node leftHead = head;
+        Node rightHead = prev;
+
+        Node nextLeft, nextRight;
+
+        // alternate merge
+        while(leftHead != null && rightHead != null){
+            nextLeft = leftHead.next;
+            leftHead.next = rightHead;
+            nextRight = rightHead.next;
+            rightHead.next = nextLeft;
+
+            leftHead = nextLeft;
+            rightHead = nextRight;
+        }
+
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -314,18 +354,19 @@ public class LinkedList {
 //        System.out.println("Rec search "+ ll.recSearch(13));
 //        ll.removeNthFromLast(2);
 //        ll.printLinkedList();
-//        ll.addLast(1);
-//        ll.addLast(2);
-//        ll.addLast(3);
-//        ll.addLast(4);
-//        ll.addLast(5);
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
+        ll.addLast(6);
 //        ll.printLinkedList();
 //        System.out.println(ll.isCycle());
 //        System.out.println(ll.isLinkedListPalindrome());
-        head = new Node(1);
-        head.next = new Node(6);
-        head.next.next = new Node(5);
-        head.next.next.next = new Node(4);
+//        head = new Node(1);
+//        head.next = new Node(6);
+//        head.next.next = new Node(5);
+//        head.next.next.next = new Node(4);
         //head.next.next.next.next = head.next;
         //1-2-3-4-1
         //System.out.println(isCycle());
@@ -335,9 +376,11 @@ public class LinkedList {
 //
 //        removeCycle();
         ll.printLinkedList();
-        System.out.println(isCycle());
-        ll.head = ll.mergeSort(head);
-        ll.mergeSort(head);
+//        System.out.println(isCycle());
+//        ll.head = ll.mergeSort(head);
+//        ll.mergeSort(head);
+//        ll.printLinkedList();
+        ll.zigZag();
         ll.printLinkedList();
 
     }

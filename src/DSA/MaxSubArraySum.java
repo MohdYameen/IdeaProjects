@@ -80,7 +80,7 @@ public class MaxSubArraySum {
 
 
 
-        System.out.println("Max Sum of Sub Array using Kadane's Algorithm: "+kadanesAlgo(numbers));
+        System.out.println("Max Sum of Sub Array using Kadane's Algorithm: "+kadanesAlgo(arr));
 
     }
 }

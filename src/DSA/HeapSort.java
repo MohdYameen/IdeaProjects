@@ -24,9 +24,6 @@ public class HeapSort {
     static void heapsort(int [] arr){
 
         int len = arr.length;
-//        for(int i = len/2 -1; i>=0;i--){
-//            heapify(arr, len, i);
-//        }
         //swap the elements and heapify
         for(int i = len-1;i>=0;i--){
             int temp = arr[0];

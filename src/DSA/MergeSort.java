@@ -19,14 +19,12 @@ public class MergeSort {
                 //i++;idx2++;
             }
         }
-
         while(left <= mid){
             merged[i++] = arr[left++];
         }
         while(right <= end_index){
             merged[i++] = arr[right++];
         }
-
         for (int j=0, k=start_index;j<merged.length;j++, k++){
             arr[k] = merged[j];
         }

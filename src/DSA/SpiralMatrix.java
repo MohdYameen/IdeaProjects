@@ -3,7 +3,7 @@ package DSA;
 public class SpiralMatrix {
 
     public static void printSpiralMatrix(int [][] matrix){
-        int startRow = 0;
+        int startRow =  0;
         int startColumn = 0;
         int endRow = matrix.length-1;
         int endColumn = matrix[0].length-1;
