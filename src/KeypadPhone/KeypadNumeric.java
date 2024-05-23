@@ -8,7 +8,20 @@ public class KeypadNumeric {
     static int getCount(int n){
         if(n==1) return 10;
 
-        List<List<Integer>> l = new ArrayList<>();
+        List<List<Integer>> l = new ArrayList<>(10);
+
+// it should work but not working.
+//        l.get(0).addAll(List.of(0, 8));
+//        l.get(1).addAll(List.of(1, 2, 4));
+//        l.get(2).addAll(List.of(2, 1, 3, 5));
+//        l.get(3).addAll(List.of(3, 6, 2));
+//        l.get(4).addAll(List.of(4, 1, 7, 5));
+//        l.get(5).addAll(List.of(5, 4, 6, 2, 8));
+//        l.get(6).addAll(List.of(6, 3, 5, 9));
+//        l.get(7).addAll(List.of(7, 4, 8));
+//        l.get(8).addAll(List.of(8, 5, 0, 7, 9));
+//        l.get(9).addAll(List.of(9, 6, 8));
+
         List<Integer> l0 = new ArrayList<>();
         l0.add(0);
         l0.add(8);
@@ -75,10 +88,10 @@ public class KeypadNumeric {
         l9.add(9);
         l.add(l9);
 
-        int [] count = new int[10];
-        for(int i=0; i<10; i++){
-            count[i]=1;
-        }
+
+
+
+        int [] count = {1,1,1,1,1,1,1,1,1,1};
 
         for(int i=2; i<=n; i++){
             int [] countTemp = new int[10];
@@ -101,26 +114,10 @@ public class KeypadNumeric {
         }
         return total;
 
-
-
-//Print the list of list
-//        for(int i=0;i<l.size();i++){
-//            System.out.print(i+": ");
-//            for(int j=0;j<l.get(i).size();j++){
-//                System.out.print(l.get(i).get(j)+" ");
-//            }
-//            System.out.println();
-//        }
-
-
-
-
-
-
     }
 
     public static void main(String[] args) {
-        System.out.println(getCount(3));
+        System.out.println(getCount(2));
 
     }
 }

@@ -21,7 +21,6 @@ public class StockSpan {
             }
             s.push(i);
         }
-
     }
 
     public static void main(String[] args) {
