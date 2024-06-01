@@ -1,7 +1,7 @@
 package com.datastructure;
 
-public class LinkedList {
-    class Node{
+public class LinkedList<S> {
+    static class Node{
         int data;
         Node next;
 
@@ -10,7 +10,7 @@ public class LinkedList {
             next = null;
         }
     }
-    Node head;
+    static Node head;
     void add(int data){
         Node toAdd = new Node(data);
         if(head == null){
@@ -29,8 +29,8 @@ public class LinkedList {
             System.out.print(t.data + " ");
             t=t.next;
         }
+        System.out.println();
     }
-
 
     void reverse(){
         Node current = head;
@@ -42,19 +42,65 @@ public class LinkedList {
             current = next;
         }
         head=prev;
+    }
 
+    int search(int key){
+        Node temp = head;
+        int i = 0;
+        while(temp != null){
+            if(temp.data == key) return i;
+            temp = temp.next;
+            i++;
+        }
+        return -1;
+    }
 
+    int helper(Node head, int key){
+        if(head == null) return -1;
+        if(head.data == key) return 0;
+        int index = helper(head.next, key);
+        if(index == -1) return -1;
+        return index+1;
+    }
+    int searchRecursion(int key){
+        return helper(head, key);
+    }
 
+    //Floyd's Cycle Finding Algorithm
+    static boolean isCycle(){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
-        ll.add(5);
-        ll.add(4);
-        ll.show();
+//        LinkedList ll = new LinkedList();
+//        ll.add(5);
+//        ll.add(4);
+//        ll.add(6);
+//        ll.add(7);
+//        ll.show();
+//
+//        //ll.reverse();
+//        //ll.show();
+//        System.out.println(ll.searchRecursion(7));
 
-        ll.reverse();
-        ll.show();
+        head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = head.next;
+        System.out.println(isCycle());
+
+
+
     }
 
 

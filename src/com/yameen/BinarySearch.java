@@ -2,16 +2,14 @@ package com.yameen;
 
 public class BinarySearch {
 
-    static int BinarySearch(int [] a, int s, int e, int find){
-        if(e>=s){
-            int mid = s + (e-s) / 2;
-            if(a[mid] == find)
-                return mid;
-
-            if(a[mid] > find)
-               return BinarySearch(a,s,mid-1,find);
-
-           return BinarySearch(a,mid+1,e,find);
+    static int BinarySearch(int [] arr, int find){
+        int low = 0;
+        int high = arr.length-1;
+        while (low<=high){
+            int mid = low + (high - low)/2;
+            if(find == arr[mid]) return mid;
+            else if(arr[mid] < find) low = mid +1;
+            else high = mid - 1;
         }
         return -1;
     }
@@ -78,15 +76,15 @@ public class BinarySearch {
     }
 
     public static void main(String ... args){
-        int arr [] = {1,1,1,3,3,5,5,5,5,5,9,9,10,11};
-      //  System.out.println(BinarySearch(arr,0,8,10));
+        int arr [] = {1,1,1,3,3,5,5,5,5,5,6,9,9,10,11};
+ System.out.println(BinarySearch(arr,6));
       //  System.out.println(BSLowerHigher(arr,8,103));
         //System.out.println(findCount(arr,11,10));
-
-        System.out.println(BSLower(arr,5));
-        System.out.println(BSHigher(arr,5));
-
-        System.out.println(findCount(arr,5));
+//
+//        System.out.println(BSLower(arr,5));
+//        System.out.println(BSHigher(arr,5));
+//
+//        System.out.println(findCount(arr,5));
 
 
     }
