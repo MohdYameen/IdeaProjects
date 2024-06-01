@@ -1,5 +1,6 @@
 package Tree;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -214,6 +215,103 @@ public class Tree {
             System.out.println();
         }
 
+        static void kthLevel(Node root, int level, int k){
+            if(level == k){
+                System.out.print(root.data+" ");
+                return;
+            }
+            kthLevel(root.left,level+1, k);
+            kthLevel(root.right, level+1, k);
+        }
+
+        static boolean getPath(Node root, int n, ArrayList<Node> path){
+            if(root == null) return false;
+            path.add(root);
+            if(root.data == n) return true;
+
+            boolean foundLeft = getPath(root.left, n, path);
+            boolean foundRight = getPath(root.right, n,path);
+
+            if(foundRight || foundLeft) return true;
+            path.remove(path.size()-1);
+            return false;
+        }
+
+        static void lca(Node root, int n1, int n2){
+            ArrayList<Node> path1 = new ArrayList<>();
+            ArrayList<Node> path2 = new ArrayList<>();
+
+            getPath(root, n1, path1);
+            getPath(root, n2, path2);
+
+            if(path1.isEmpty() || path2.isEmpty()){
+                System.out.println(-1);
+                return;
+            }
+            int i=0;
+            for(; i<path2.size() && i<path1.size(); i++){
+                if(path1.get(i) != path2.get(i)) break;
+            }
+            System.out.println(path1.get(i-1).data);
+        }
+
+        static Node lca2(Node root, int n1, int n2){
+            if(root == null||root.data == n1 || root.data == n2) return root;
+
+            Node leftLca = lca2(root.left, n1, n2);
+            Node rightLca = lca2(root.right, n1, n2);
+
+            if(leftLca == null) return rightLca;
+            if(rightLca == null) return leftLca;
+
+            return root;
+        }
+
+        static int lcaToNodeDistance(Node root, int n){
+            if (root == null) return -1;
+            if (root.data == n) return 0;
+
+            int leftDis = lcaToNodeDistance(root.left, n);
+            int rightDist = lcaToNodeDistance(root.right, n);
+
+            if(leftDis == -1 && rightDist == -1) return -1;
+            else if (leftDis == -1) return rightDist+1;
+            else return leftDis+1;
+        }
+
+        static int minDistance(Node root, int n1, int n2){
+            Node lca = lca2(root, n1, n2);
+            return lcaToNodeDistance(lca, n1) + lcaToNodeDistance(lca, n2);
+        }
+
+        static int kthAncestor(Node root, int n, int k){
+            if(root == null) return -1;
+            if(root.data == n) return 0;
+
+            int leftdist = kthAncestor(root.left, n, k);
+            int rightdist = kthAncestor(root.right, n,k);
+
+            if(leftdist == -1 && rightdist == -1) return -1;
+            int max = Math.max(leftdist, rightdist);
+            if(max+1 == k){
+                System.out.println("Kth Ancestor is "+root.data);
+            }
+            return max+1;
+        }
+
+        static int transformSumTree(Node root){
+            if(root == null) return 0;
+            int leftChild = transformSumTree(root.left);
+            int rightChild = transformSumTree(root.right);
+            int data = root.data;
+
+            int newLeft = root.left == null? 0 : root.left.data;
+            int newright = root.right == null? 0 : root.right.data;
+
+            root.data = leftChild + newLeft+ rightChild + newright;
+            return data;
+        }
+
     }
 
     public static void main(String[] args) {
@@ -251,7 +349,26 @@ public class Tree {
 //        subtree.right =  new Node(5);
 //
 //        System.out.println(isSubTree(root,subtree));
-        BinaryTree.topView(root);
+        //BinaryTree.topView(root);
+        //BinaryTree.kthLevel(root, 1,2);
+        int n1 =7, n2=5;
+        //System.out.println(BinaryTree.lca(root, n1, n2).data);
+
+        //BinaryTree.lca(root, n1, n2);
+
+//        System.out.println(BinaryTree.lca2(root, n1, n2).data);
+//
+//        System.out.println("Min distance between " +n1+ " & "+n2+" is : "+BinaryTree.minDistance(root, n1, n2));
+//
+//        System.out.println(BinaryTree.kthAncestor(root, n1, 1));
+
+        System.out.print("PreOrder: ");
+        BinaryTree.preOrder(root);
+        System.out.println();
+        System.out.print("PreOrder After Transform : ");
+        BinaryTree.transformSumTree(root);
+        BinaryTree.preOrder(root);
+
 
 
 
