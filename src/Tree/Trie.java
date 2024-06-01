@@ -36,7 +36,7 @@ public class Trie {
     }
 
     public static void main(String[] args) {
-        String [] words = {"the", "a", "there", "their", "any", "thee"};
+        String [] words = {"the", "an", "there", "their", "any", "thee"};
         for(String s:words){
             insert(s);
         }
