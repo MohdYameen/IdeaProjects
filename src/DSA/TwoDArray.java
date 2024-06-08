@@ -36,8 +36,8 @@ public class TwoDArray {
             System.out.println();
         }
 
-        searchInMatrix(matrix,5);
-        //System.out.println(searchInMatrix(matrix,51));
+        //searchInMatrix(matrix,5);
+        System.out.println(searchInMatrix(matrix,51));
 
 
     }

@@ -2,7 +2,7 @@ package Tree;
 
 public class WordBreakProblem {
 
-    //can be sloved better using DP.
+    //can be solved better using DP.
     static class Node{
         Node [] children = new Node[26];
         boolean eow = false;
