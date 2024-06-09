@@ -78,6 +78,25 @@ public class Knapsack {
         return dp[val.length][capacity];
     }
 
+    public static int unboundedKnapsack(int []val, int []wt, int W){
+        int n = val.length;
+        int [][]dp = new int[n+1][W+1];
+
+        for(int i=1;i<dp.length;i++){
+            for(int j=1; j<dp[i].length; j++){
+                if(wt[i-1] <= j){
+                    int incItem = val[i-1] + dp[i][j-wt[i-1]];
+                    int excItem = dp[i-1][j];
+                    dp[i][j] = Math.max(incItem, excItem);
+                } else {
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
+
+        return dp[n][W];
+    }
+
     public static void main(String[] args) {
 
         int [] val = {15,14,10,45,30};
@@ -100,6 +119,9 @@ public class Knapsack {
         System.out.println(knapsackMemoization(val, wt, capacity, val.length, dp));
         System.out.println("New Tab");
         System.out.println(knapsackTab(val, wt, capacity));
+
+        System.out.println("Unbounded ");
+        System.out.println(unboundedKnapsack(val, wt, capacity));
 
     }
 }
