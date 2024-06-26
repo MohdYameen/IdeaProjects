@@ -21,7 +21,7 @@ public class LongestIncreasingSubsequence {
     }
 
     public static void main(String[] args) {
-        int [] nums = {10,9,2,5,3,7,101,18};
+        int [] nums = {50,3,10,7,40,80};
         System.out.println(lengthOfLCIS(nums));
     }
 }

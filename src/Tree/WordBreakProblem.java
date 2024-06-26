@@ -31,12 +31,12 @@ public class WordBreakProblem {
             if(curr.children[index] == null) return false;
             curr = curr.children[index];
         }
-        return curr.eow == true;
+        return curr.eow;
     }
 
     public static boolean wordBreak(String key){
 
-        if(key.length() == 0) return true;
+        if(key.isEmpty()) return true;
         for(int i=1; i<=key.length(); i++){
             if(search(key.substring(0, i)) && wordBreak(key.substring(i))){
                 return true;
