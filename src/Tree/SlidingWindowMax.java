@@ -2,7 +2,7 @@ package Tree;
 
 public class SlidingWindowMax {
 
-    //input is an array and maxsum, output will be max length with sum less tha maxSum
+    //input is an array and maxsum, output will be max length with sum less than equals maxSum
     public static int maxLength(int [] arr, int maxSum){
         //Brute Force
 //        int maxLength = 0;
@@ -93,8 +93,8 @@ public class SlidingWindowMax {
         int k =4;
         //generateAllSubArrays(arr);
         //System.out.println(maxLength(arr, maxSum));
-        //sumEachWindow(arr, 3);
-        System.out.println(maximumPointsFromCards(arr, k));
+        sumEachWindow(arr, 3);
+        //System.out.println(maximumPointsFromCards(arr, k));
 
 
 

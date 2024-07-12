@@ -1,5 +1,7 @@
 package DSA;
 
+import java.util.HashSet;
+
 public class LinkedList {
 
     public static class Node{
@@ -14,7 +16,6 @@ public class LinkedList {
     public static Node tail;
 
     public void addFirst(int data){
-        //create new Node.
         Node newNode = new Node(data);
         if(head == null){
             head = tail = newNode;
@@ -358,8 +359,13 @@ public class LinkedList {
         ll.addLast(2);
         ll.addLast(3);
         ll.addLast(4);
+        ll.addLast(4);
         ll.addLast(5);
         ll.addLast(6);
+        ll.printLinkedList();
+
+        removeDuplicates(ll);
+        ll.printLinkedList();
 //        ll.printLinkedList();
 //        System.out.println(ll.isCycle());
 //        System.out.println(ll.isLinkedListPalindrome());
@@ -375,13 +381,45 @@ public class LinkedList {
 //        System.out.println(ll.isCycle());
 //
 //        removeCycle();
-        ll.printLinkedList();
+        //ll.printLinkedList();
 //        System.out.println(isCycle());
 //        ll.head = ll.mergeSort(head);
 //        ll.mergeSort(head);
 //        ll.printLinkedList();
-        ll.zigZag();
-        ll.printLinkedList();
+        //ll.zigZag();
+        //ll.printLinkedList();
 
+    }
+
+
+
+//    public static void main(String[] args) {
+//        java.util.LinkedList<Integer> list = new java.util.LinkedList<>();
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+//        list.add(2);
+//        list.add(4);
+//        list.add(1);
+//
+//        System.out.println("Original LinkedList: " + list);
+//
+//        removeDuplicates(list);
+//
+//        System.out.println("LinkedList after removing duplicates: " + list);
+//    }
+
+    public static Node removeDuplicates(LinkedList list) {
+        HashSet<Integer> seen = new HashSet<>();
+        Node temp = head;
+        Node prev = null;
+        while (temp.next != null) {
+            if(!seen.add(temp.data)){
+                prev.next = temp.next;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
     }
 }
