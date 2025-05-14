@@ -43,12 +43,12 @@ public class LongestCommonSubsequence {
     public static void main(String[] args) {
         String s1 = "abcdge";
         String s2 = "abedg";
-        System.out.println(lcs(s1,s2,s1.length(),s2.length()));
-        int [][] dp = new int[s1.length()+1][s2.length()+1];
-        for(int i=0; i<dp.length; i++){
-            Arrays.fill(dp[i], -1);
-        }
-        System.out.println(lcsMemoization(s1,s2,s1.length(), s2.length(), dp));
+//        System.out.println(lcs(s1,s2,s1.length(),s2.length()));
+//        int [][] dp = new int[s1.length()+1][s2.length()+1];
+//        for(int i=0; i<dp.length; i++){
+//            Arrays.fill(dp[i], -1);
+//        }
+//        System.out.println(lcsMemoization(s1,s2,s1.length(), s2.length(), dp));
 
         System.out.println(lcsTabulation(s1,s2));
 

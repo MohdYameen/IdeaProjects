@@ -7,8 +7,10 @@ public class BinarySearch {
         int high = arr.length-1;
         while (low<=high){
             int mid = low + (high - low)/2;
-            if(find == arr[mid]) return mid;
-            else if(arr[mid] < find) low = mid +1;
+            if(find == arr[mid])
+                return mid;
+            else if(arr[mid] < find)
+                low = mid +1;
             else high = mid - 1;
         }
         return -1;
@@ -77,7 +79,7 @@ public class BinarySearch {
 
     public static void main(String ... args){
         int arr [] = {1,1,1,3,3,5,5,5,5,5,6,9,9,10,11};
- System.out.println(BinarySearch(arr,6));
+        System.out.println(BinarySearch(arr,6));
       //  System.out.println(BSLowerHigher(arr,8,103));
         //System.out.println(findCount(arr,11,10));
 //

@@ -51,10 +51,15 @@ public class MaxSubArraySum {
         int currSum = 0;
         for (int j : a) {
             currSum += j;
+            System.out.println("value in array : "+j);
+            System.out.println("Curr sum : "+currSum);
             if (currSum < 0) {
                 currSum = 0;
+                System.out.println("Curr sum reset to : "+currSum);
             }
             maxSum = Math.max(maxSum, currSum);
+            System.out.println("Max sum : "+maxSum);
+            System.out.println("*********************************");
         }
         return maxSum;
     }
@@ -63,7 +68,7 @@ public class MaxSubArraySum {
     public static void main(String[] args) {
         int [] arr = {1,-2,6,-1,3};
         int [] numbers = {-2,-3,4,-1,-2,1,5,-3};
-        System.out.println("Max Sub Array Sum: "+maxSubArraySum(arr));
+//        System.out.println("Max Sub Array Sum: "+maxSubArraySum(arr));
 
 //        for (int i =0;i<arr.length;i++){
 //            System.out.print(arr[i]+" ");
@@ -75,8 +80,8 @@ public class MaxSubArraySum {
 //            System.out.print(prefixArray[i]+" ");
 //        }
 
-        System.out.println();
-        System.out.println("Max Sum of Sub Array using Prefix: "+maxSubArraySumUsingPrefix(arr));
+//        System.out.println();
+//        System.out.println("Max Sum of Sub Array using Prefix: "+maxSubArraySumUsingPrefix(arr));
 
 
 

@@ -7,7 +7,7 @@ public class ResourceBundleDemo {
 
     public static void main(String[] args) {
 
-        ResourceBundle bundle = ResourceBundle.getBundle("ClassLPU//message");
+        ResourceBundle bundle = ResourceBundle.getBundle("com/ClassLPU/message");
         System.out.println(bundle.getString("greetings"));
 
         bundle = ResourceBundle.getBundle("message", Locale.FRENCH);

@@ -6,7 +6,7 @@ public class BuyAndSellStocks {
 
     profit = selling price - buying price
     set buying price as  Max integer
-    if buying price is less than todays price => profit = today's proce - buying price
+    if buying price is less than todays price => profit = today's price - buying price
 
     buying price  = min(todays' price and  buying price )
 

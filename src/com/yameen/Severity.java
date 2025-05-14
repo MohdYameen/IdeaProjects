@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public enum Severity {
     LOW,MEDIUM,HIGH;
-
 }
 class CernerRecord{
     String name;
