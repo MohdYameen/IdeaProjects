@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Alice Johnson",
+    "age": 30,
+    "emailAddresses": [
+      "alice@example.com",
+      "alice.johnson@work.com"
+    ]
+  },
+  {
+    "name": "Bob Smith",
+    "age": 25,
+    "emailAddresses": [
+      "bob.smith@gmail.com"
+    ]
+  },
+  {
+    "name": "Charlie Lee",
+    "age": 35,
+    "emailAddresses": [
+      "charlie@personal.com",
+      "charlie.lee@company.org"
+    ]
+  }
+]
