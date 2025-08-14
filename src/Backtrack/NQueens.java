@@ -42,7 +42,8 @@ public class NQueens {
 
             if(isSafe(board, row, j)){
                 board[row][j] = 'Q';
-                if(nQueensOneSolution(board, row + 1)) return true;
+                if(nQueensOneSolution(board, row + 1))
+                    return true;
                 board[row][j] = '-';
             }
         }
@@ -80,7 +81,7 @@ public class NQueens {
             }
         }
 
-        //printBoard(board);
+        printBoard(board);
         nQueens(board, 0);
         System.out.println(count);
         System.out.println(nQueensOneSolution(board, 0));

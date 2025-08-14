@@ -31,8 +31,20 @@ public class BuyAndSellStocks {
         System.out.println(max_profit);
     }
 
-    public static int bullAndSell(int [] arr){
-        int min = arr[0];
+//    public static int bullAndSell(int [] arr){
+//        int min = arr[0];
+//        int maxProfit = 0;
+//        for(int i=1; i<arr.length; i++){
+//            int cost = arr[i]-min;
+//            maxProfit = Math.max(maxProfit, cost);
+//            min = Math.min(min, arr[i]);
+//        }
+//        return maxProfit;
+//    }
+
+
+    public static int stock(int [] arr){
+        int min =arr[0];
         int maxProfit = 0;
         for(int i=1; i<arr.length; i++){
             int cost = arr[i]-min;
@@ -45,6 +57,6 @@ public class BuyAndSellStocks {
     public static void main(String[] args) {
         int [] price_day = {7,1,5,3,6,4};
         maxProfitInStocks(price_day);
-        System.out.println("New approach "+ bullAndSell(price_day));
+        System.out.println("New approach "+ stock(price_day));
     }
 }

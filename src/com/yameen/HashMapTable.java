@@ -18,10 +18,27 @@ public class HashMapTable {
         Set set = hMap.entrySet();
         Iterator it = set.iterator();
 
-        while(it.hasNext()){
-            Map.Entry mEntry = (Map.Entry)it.next();
-            System.out.println(mEntry.getKey()+ ", "+mEntry.getValue());
+        System.out.println("New for");
+
+        Iterator it2c = hMap.entrySet().iterator();
+
+        for(Map.Entry<Integer, String> entry : hMap.entrySet()){
+            System.out.println(entry.getKey()+" :  "+entry.getValue());
         }
+        System.out.println("New itr2");
+
+        while(it2c.hasNext()){
+            Map.Entry mEntry = (Map.Entry)it2c.next();
+            System.out.println(mEntry.getKey()+"  : "+ mEntry.getValue());
+        }
+
+        System.out.println("End new itr");
+
+
+//        while(it.hasNext()){
+//            Map.Entry mEntry = (Map.Entry)it.next();
+//            System.out.println(mEntry.getKey()+ ", "+mEntry.getValue());
+//        }
 
         hTable.put(1,"A");
         hTable.put(2,"b");

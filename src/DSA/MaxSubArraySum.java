@@ -10,9 +10,7 @@ public class MaxSubArraySum {
                 for (int k=i;k<=j;k++){
                     current_sum+=a[k];
                 }
-                if(current_sum > max_sum){
-                    max_sum = current_sum;
-                }
+                max_sum = Math.max(max_sum, current_sum);
             }
         }
         return max_sum;
@@ -74,13 +72,13 @@ public class MaxSubArraySum {
 //        for (int i =0;i<prefixArray.length;i++){
 //            System.out.print(prefixArray[i]+" ");
 //        }
-
-        System.out.println();
-        System.out.println("Max Sum of Sub Array using Prefix: "+maxSubArraySumUsingPrefix(arr));
-
-
-
-        System.out.println("Max Sum of Sub Array using Kadane's Algorithm: "+kadanesAlgo(arr));
+//
+//        System.out.println();
+//        System.out.println("Max Sum of Sub Array using Prefix: "+maxSubArraySumUsingPrefix(arr));
+//
+//
+//
+//        System.out.println("Max Sum of Sub Array using Kadane's Algorithm: "+kadanesAlgo(arr));
 
     }
 }

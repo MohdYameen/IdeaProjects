@@ -1,5 +1,7 @@
 package com.datastructure;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class MergeSort {
 /*
     int array[];
@@ -70,6 +72,7 @@ public class MergeSort {
 
         for (int i=0; i<n1; ++i)
             L[i] = arr[l + i];
+
         for (int j=0; j<n2; ++j)
             R[j] = arr[m + 1+ j];
 
@@ -105,16 +108,14 @@ public class MergeSort {
         }
     }
 
-    void sort(int arr[], int l, int r)
+    void sort(int arr[], int left, int right)
     {
-        if (l < r)
+        if (left < right)
         {
-            int m = (l+r)/2;
-
-            sort(arr, l, m);
-            sort(arr , m+1, r);
-
-            merge(arr, l, m, r);
+            int m = left + (right-left) / 2;
+            sort(arr, left, m);
+            sort(arr , m+1, right);
+            merge(arr, left, m, right);
         }
     }
     static void printArray(int arr[])
@@ -129,6 +130,8 @@ public class MergeSort {
     public static void main(String args[])
     {
         int arr[] = {48,36,13,52,19,94,21};
+
+        AtomicInteger atomicInteger = new AtomicInteger();
 
         System.out.println("Given Array");
         printArray(arr);

@@ -7,7 +7,7 @@ class Resource {
     public synchronized void test1() {
         System.out.println("Inside Test1 Method");
         try {
-            Thread.sleep(Long.MAX_VALUE);;
+            Thread.sleep(5000);;
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -16,7 +16,7 @@ class Resource {
     public static synchronized void test2() {
         System.out.println("Inside Test2 Method");
         try {
-            Thread.sleep(Long.MAX_VALUE);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -31,7 +31,7 @@ class Task1 implements Runnable {
     @Override
     public void run() {
         resource.test1();
-        resource.test2();
+//        resource.test2();
         System.out.println("Invoked Test2 Method from Task1");
     }
 }
@@ -44,7 +44,7 @@ class Task2 implements Runnable {
     @Override
     public void run() {
         resource.test2();
-        resource.test1();
+//        resource.test1();
         System.out.println("Invoked Test1 Method from Task2");
     }
 }

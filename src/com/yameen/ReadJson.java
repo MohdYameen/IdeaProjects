@@ -35,7 +35,7 @@
 //                }
 //            }
 //
-//            System.out.println("👤 User with the highest age:");
+//            System.out.println("User with the highest age:");
 //            System.out.println("Name: " + maxAgeUser.name);
 //            System.out.println("Age: " + maxAgeUser.age);
 //            System.out.println("Emails:");

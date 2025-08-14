@@ -1,9 +1,6 @@
 package com.yameen;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Testttt {
 
@@ -22,7 +19,7 @@ public class Testttt {
         hob2.add("Singing");
         hob2.add("Running");
 
-        final Employee11 emp1 = new Employee11(1, "Yameen", 25, hob1, ad1);
+        Employee11 emp1 = new Employee11(1, "Yameen", 25, hob1, ad1);
         Employee11 emp2 = new Employee11(2, "Vinayak", 29, hob2, ad2);
 
         System.out.println(emp1.getHobbies());
@@ -34,14 +31,23 @@ public class Testttt {
         System.out.println(emp1.getHobbies());
 
 
-//        empMap.put(emp1, "Engineer");
-//        empMap.put(emp2, "Director");
-//
+        empMap.put(emp1, "Engineer");
+        empMap.put(emp2, "Director");
+
+//        Collections
+
 //        emp1.setId(4);
-//
-//        Employee11 emp3 = new Employee11(1, "Yameen", 25, hob1, ad1);
-//
+
+        Employee11 emp3 = new Employee11(2, "Yameen", 25, hob1, ad1);
+
 //        System.out.println(empMap.get(emp1));
+
+        empMap.put(emp3, "Engineer");
+
+        System.out.println("Employee Map :  ");
+        for(Map.Entry<Employee11, String> entry : empMap.entrySet()){
+            System.out.println(entry.getKey()+" :  "+entry.getValue());
+        }
 
 //cloing
 //        aggregation
@@ -105,12 +111,43 @@ final class Employee11{
 
 
     public List<String> getHobbies() {
-        return hobbies;
+        return new ArrayList<>(hobbies);  //list will always be mutable, we return new list everytime, no mater if you add new element to list
+        // it will still return the old one;
     }
 
     public Address getAdd() {
         return add;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", hobbies=" + hobbies +
+                ", add=" + add +
+                '}';
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; // same reference
+        if (!(o instanceof Employee11)) return false; // different type
+        Employee11 other = (Employee11) o;
+        return id == other.id &&
+                age == other.age &&
+                Objects.equals(name, other.name) &&
+                Objects.equals(hobbies, other.hobbies) &&
+                Objects.equals(add, other.add);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age, hobbies, add);
+    }
+
 }
 
 
@@ -137,5 +174,13 @@ class Address{
 
     public void setPin(int pin) {
         this.pin = pin;
+    };
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "city='" + city + '\'' +
+                ", pin=" + pin +
+                '}';
     }
 }

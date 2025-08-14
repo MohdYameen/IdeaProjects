@@ -18,7 +18,7 @@ public class Fibonacci {
         return dp[n];
     }
     public static void main(String[] args) {
-        int n=1;
+        int n=10;
         int [] dp = new int[n+1]; 
 
         System.out.println("Fib Memoization : "+fib(n, dp));

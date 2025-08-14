@@ -8,9 +8,12 @@ public class PairSum {
         int lp=0, rp=arr.size()-1;
 
         while(lp<rp){
-            if(arr.get(lp)+arr.get(rp) == target) return true;
-            else if(arr.get(lp)+arr.get(rp) < target) lp++;
-            else rp--;
+            if(arr.get(lp)+arr.get(rp) == target)
+                return true;
+            else if(arr.get(lp)+arr.get(rp) < target)
+                lp++;
+            else
+                rp--;
         }
         return false;
     }
