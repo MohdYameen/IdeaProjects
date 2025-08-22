@@ -63,9 +63,9 @@ public class ProjectLombok {
         printName("Yameen");
     }
 }
-
-@AllArgsConstructor
-class LomEmp{
-    @Getter @Setter
-    String name;
-}
+//
+//@AllArgsConstructor
+//class LomEmp{
+//    @Getter @Setter
+//    String name;
+//}

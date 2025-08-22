@@ -143,9 +143,14 @@ public class Solution {
         int n = input.length();
         int required = n / 4;
         Map<Character, Integer> freq = new HashMap<>();
+
         char[] letters = {'B', 'D', 'U', 'H'};
-        for(char c : letters) freq.put(c, 0);
-        for (char c : input.toCharArray()) freq.put(c, freq.get(c) + 1);
+        for(char c : letters)
+            freq.put(c, 0);
+
+
+        for (char c : input.toCharArray())
+            freq.put(c, freq.get(c) + 1);
 
         // If already steady
         boolean alreadySteady = true;
@@ -155,12 +160,14 @@ public class Solution {
                 break;
             }
         }
+
         if (alreadySteady) return 0;
 
         int minLen = n;
         int left = 0;
         int[] count = new int[128];
-        for (char c : input.toCharArray()) count[c]++;
+        for (char c : input.toCharArray())
+            count[c]++;
 
         int right = 0;
         while (right < n) {
@@ -190,3 +197,43 @@ public class Solution {
         System.out.println(makeStringSteady("BBBHUUDDU")); // Output: 2
     }
 }
+
+//@Test
+//public void testSampleCase1() {
+//    assertEquals(5, Solution.makeStringSteady("HBBBUDBBB"));
+//}
+//
+//@Test
+//public void testSteadyString() {
+//    assertEquals(0, Solution.makeStringSteady("HBDU"));
+//}
+//
+//@Test
+//public void testAllOneChar() {
+//    assertEquals(3, Solution.makeStringSteady("BBBB"));
+//}
+//
+//@Test
+//public void testSingleExcess() {
+//    assertEquals(1, Solution.makeStringSteady("BBDU"));
+//}
+//
+//@Test
+//public void testLargeSteady() {
+//    assertEquals(0, Solution.makeStringSteady("BBDDBBUUHHUUHHDD"));
+//}
+//
+//@Test
+//public void testOneReplacement() {
+//    assertEquals(1, Solution.makeStringSteady("BBDDHHUUUB"));
+//}
+//
+//@Test
+//public void testRemoveFromMiddle() {
+//    assertEquals(2, Solution.makeStringSteady("BHBBBUUDDU"));
+//}
+//
+//@Test
+//public void testEndImbalance() {
+//    assertEquals(3, Solution.makeStringSteady("BUDHBUDHBBBB"));
+//}
