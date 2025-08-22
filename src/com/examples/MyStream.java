@@ -36,14 +36,25 @@ Terminal Operations :
     findFirst()     :
 
 
+Sequential Stream   :
+    By default, streams are sequential
+    processing happens in a single thread
+    order is preserved
+    safer for small datasets or when order matters
+
+Parallel Stream     :
+    Explicitly use parallelStream()
+    Works concurrently, make use of ForkJoinPool internally
+    Processing happens in multiple thread
+    order may not be preserved
+    overhead of thread splitting -> not always faster for small data sets
+    internally uses
+
  */
 
 import javafx.scene.paint.PhongMaterial;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -81,7 +92,22 @@ public class MyStream {
                 .findFirst()
                 .orElse(-1);
 
-        System.out.println("Second larget even number in array is "+ solution);
+//        System.out.println("Second larget even number in array is "+ solution);
+
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Yameen");
+
+//        names.stream()
+//                .forEach(n -> {
+//                    System.out.println(Thread.currentThread().getName()+ " : "+n);
+//                });
+
+        System.out.println("Parallel Stream");
+
+        names.parallelStream()
+                .forEach(name -> {
+                    System.out.println(Thread.currentThread().getName() + ": "+ name);
+                });
+
 
 
 

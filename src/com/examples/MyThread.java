@@ -86,6 +86,7 @@ Locks and Semaphores: no synconized block/mthod, only one thread should be able 
 Condition :
 await() = wait()
 signal() =  notify()
+signalAll() = notifyAll()
 
 Lock Free Mechanism : (not an alternative to lock based but can also be used for concurrency)
 CAS(Compare and Swap) Operation, Low Level Operation, all CPU supports it. Involves 3 main params (Mem loc, exp value, new value)
@@ -99,7 +100,9 @@ Specific use cases :
 
 Atomic : Thread Saftey operations
 
-Volatile : read or write directly to memory(RAM) ignoring L1 and L2 cache.
+Volatile :
+    volatile fields used with var, that is being consumed by multiple thread, its updated value is visible to all theads
+    read or write directly to memory(RAM) ignoring L1 and L2 cache.
 
 ThreadPool :
     Collection of threads aka workers, which are available to perform submitted tasks. Once task is completed.
@@ -174,7 +177,8 @@ Executor Utility :
         newWorkStealingPool() : create ForkJoinPool Executor
 
 
-ForkJoinPool: more parallelism,
+ForkJoinPool: more parallelism, special thread pool introduced in java7
+    designed for tassks that can be broken into smaller subtasks and executed in parallel
     to create Executors.newWorkStealingPool() or // this will create no. of threads as no. of available processors or you can give no . of thread you want to create
     ex. big task divided in small tasks(forking) and then merge the result(join).
 
