@@ -30,8 +30,10 @@ class Class : during class loading by JVM, JVM create object of Class
 
 //import com.yameen.MyClass;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 public class MyReflection {
 
@@ -60,6 +62,28 @@ public class MyReflection {
             System.out.println("Method name : "+m.getName()+ " and its return type is "+ m.getReturnType());
         }
 
+        Class eagleClass = Eagle.class;
+
+
+        Constructor cont = eagleClass.getDeclaredConstructor();
+        cont.setAccessible(true);
+
+//        Eagle e = (Eagle) cont.newInstance();
+//        e.fly();
+
+        Object eagleObj = cont.newInstance();
+        Method eagleMethod = eagleClass.getMethod("fly");
+        eagleMethod.invoke(eagleObj);
+
+
+//        Constructor[] constructorsList = eagleClass.getDeclaredConstructors();
+//        for (Constructor constructor : constructorsList){
+//            System.out.println("modifier : "+ Modifier.toString(constructor.getModifiers()));
+//            constructor.setAccessible(true);
+//
+//            Eagle eagle = (Eagle) constructor.newInstance();
+//            eagle.fly();
+//        }
 
     }
 }
@@ -83,5 +107,13 @@ class Bird{
 //        this.canFly = canFly;
 //    }
 
+}
 
+class Eagle{
+    private Eagle(){
+
+    }
+    public void fly(){
+        System.out.println("Eagle is flying");
+    }
 }
