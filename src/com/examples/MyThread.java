@@ -3,7 +3,7 @@ package com.examples;
 
 /*  THEORY
 Process :
-    Instance of prgram that is getting executed, (cmd Java Test) JVM starts the new process.
+    Instance of program that is getting executed, (cmd Java Test) JVM starts the new process.
     It has its own memory.
     OS allocates multiple resources to process.
 
@@ -14,7 +14,6 @@ Thread :
 In Java, when a process is started, it starts with 1 thread, main thread, from there we can create multiple threads.
 
 java -Xms256m -Xmx2g Test
-
 
 **Thread Creation** :
 
@@ -206,7 +205,7 @@ shutdownNow() :
 
 
 ScheduledThreadPoolExecutor :
-    help to schdule a task, ex first time delay, or interval, minthread = input, max=Max_INTEGER,
+    help to schedule a task, ex first time delay, or interval, minthread = input, max=Max_INTEGER,
     Methods:
         schedule(Runnable) : schedule this task after specific delay
         schedule(Callable) : same work, but returns a value

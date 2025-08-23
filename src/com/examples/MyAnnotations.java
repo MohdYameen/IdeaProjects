@@ -30,20 +30,42 @@ Heap pollution :
     Object of one type storing reference of another type Object, possible with varargs
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
  */
 
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.Method;
+
+//@AnnotationOne(print = "hello yameen")
 public class MyAnnotations {
+
+    @AnnotationOne(print = "hello yameen")
+    public void fly(){
+        System.out.println("flymethod");
+    }
+
+    public static void main(String[] args) throws NoSuchMethodException {
+        MyAnnotations myAnnotations = new MyAnnotations();
+        myAnnotations.fly();
+
+        Method method = myAnnotations.getClass().getMethod("fly");
+
+        if(method.isAnnotationPresent(AnnotationOne.class)){
+            AnnotationOne annotationOne = method.getAnnotation(AnnotationOne.class);
+            System.out.println("Annotation print : "+annotationOne.print());
+
+        }
+    }
+}
+
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD})
+@interface AnnotationOne{
+
+    String print() default "hello there";
+
 }

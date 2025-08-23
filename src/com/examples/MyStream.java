@@ -73,7 +73,7 @@ public class MyStream {
 
         System.out.println(str + " to " + vowels);
 
-        // count occurance of each character
+        // count occurrence of each character
         Map<Character, Long> hMap = str.chars()
                 .mapToObj(c -> (char)c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
