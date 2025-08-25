@@ -69,19 +69,40 @@ HashMap : , default capacity:16(0-15)
             if o1 and o2 are same, their hash should be same
             if hash is same for 2 objects, does not always mean objects are same
 
-    How operations are O(1) in hashmap? worst is O(n)
+    Q. How operations are O(1) in hashmap? worst is O(n)
         //If hashcode return same hash for all/many keys,
         Load factor help us with it, making O(1) comp for operations. If will do rehash once LF*size(0.75 * 16 =12), it will rehash
         After reaching treefy threshold, it gets converted into red black tree
+
+    Q. why it cannot contain dup keys?
+        Design principle of HashMap. Used hash table
+        hashcode() of the key determine which bucket/bin ti store the entry in
+        inside the bucket, it compares equals(). Hashmap will replace the old value if equals return true
 
 LinkedHashMap : maintains order(2 types) insertion order and access order(LRU at last of map, to do it set accessOrder to true)
             uses DoubleLinkedList, it contains before and after component in every Node
             extends, HashMap and implements Map as well, all values on HashMap plus 2 more before and after.
             Not threadsafe, not thread safe version available
-            Collections.sychronizedMap(linkedHashMap)
+            To create thread-safe version : Collections.sychronizedMap(linkedHashMap)
 
 
-TreeMap : maintain sort this will do 
+TreeMap : maintain sort ascending or descending order(based on keys)
+         Based on RedBlack tree(All bins/buckets as nodes of BST)
+         O(logn) time complexity of insert, remove and get operations
+
+Set <<Interface>>: child of Collection
+
+
+HashSet : Collection of objects, can not contain duplicate values, cannot be access via index
+        HashMap it uses internally.
+        All collection methods, plus addAll(). removeAll(), retainAll(), clear(),
+        Does not guarantee order
+        Not thread safe.
+        To create thread-safe Set: Set<Integer> threadSafeSet = concurrentHashMap.newKeySet();
+
+TreeSet: same as treeMap, only contains value not key-value pair
+
+LinkedHashSet : same as LinkedHashMap, only value as key
 
 
  */
