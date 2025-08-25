@@ -11,7 +11,7 @@ Reflection:  used rarely
         interfaces implemented?
         change the value of public and private fields of th class
 
-How to do Reflection?  many many .get methods available
+How to do Reflection?  many-many .get methods available
     1. Create object of Class: 3 ways
             Class.forName("Bird), Class birdClass = Bird.class, birdObj.getClass()
     2. Create object of Object :

@@ -13,11 +13,11 @@ Types : 2
     2. Custom/User Defined
 
     Annotations used on Java Code:
-        @Deprecated : mark old, outdated class, method or fields (no funrther improvements on this)
+        @Deprecated : mark old, outdated class, method or fields (no further improvements on this)
         @Override   : info to compile, check its parent and same method should present in parent, used used over methods
-        @SupressWarning("all" or "deprecation") : ignore warnings like usage of @Deprecated, unused
+        @SuppressWarning("all" or "deprecation") : ignore warnings like usage of @Deprecated, unused
         @FunctionalInterface : only one method interface, can be used with lambda
-        @SafeVarargs : supress "heap pollution warning", ( ... in main method is varargs)
+        @SafeVarargs : suppress "heap pollution warning", ( ... in main method is varargs)
 
     Annotation used on Annotation: ElementType on these Annotation_Type
         @Target : restrict where to use annotation, ElementType:
