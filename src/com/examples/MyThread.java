@@ -464,7 +464,7 @@ public class MyThread {
 //            wait();
 //        }
 //        sharedBuffer.add(item);
-//        System.out.println("Prodiced : "+item);
+//        System.out.println("Produced : "+item);
 //        notify(); // notify consumer(thread that are waiting for this resource) that item is now available
 //    }
 //

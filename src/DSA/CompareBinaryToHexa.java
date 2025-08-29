@@ -30,12 +30,40 @@ public class CompareBinaryToHexa {
         return -1;
     }
 
+    public static int intToBinary(int n){
+        String s= "";
+        while(n != 0){
+            if(n%2==1){
+                s+='1';
+//                System.out.println("adde 1");
+            }
+            else
+                s+='0';
+
+            n/=2;
+        }
+
+        // s string reverse it to get binary value
+
+        int sol = 0;
+
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i) == '0')
+                sol++;
+        }
+
+        return sol;
+
+
+    }
+
 
     public static void main(String[] args) {
-        //System.out.println(digitToValue('7'));
-        //System.out.println(convertFromBasetoDecimal("1111", 16));
-
-        // both string in decimal are equals to 22.
-        System.out.println(compareBinToHex("10110", "16"));
+//        System.out.println(digitToValue('7'));
+//        //System.out.println(convertFromBasetoDecimal("1111", 16));
+//
+//        // both string in decimal are equals to 22.
+//        System.out.println(compareBinToHex("10110", "16"));
+        System.out.println("int to binary : "+intToBinary(8));
     }
 }

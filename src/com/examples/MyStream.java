@@ -106,6 +106,18 @@ public class MyStream {
                     System.out.println(Thread.currentThread().getName() + ": "+ name);
                 });
 
+        List<Integer> nList = Arrays.asList(2,4,3,7,6,5,9,10);
+
+        List<Integer> sqList = nList.stream()
+                .filter(n -> n%2 != 0)
+                .distinct()
+                .map(integer -> integer*integer)
+                .collect(Collectors.toList());
+
+        System.out.println("before : "+nList);
+
+        System.out.println("after : "+sqList);
+
 
 
 

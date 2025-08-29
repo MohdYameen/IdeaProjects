@@ -15,6 +15,10 @@ public class Deloitte extends Thread{
 
     // Deloitte interview on 14th Aug 2025, failed miserably
     public static void main(String[] args) throws Exception {
+        Base b1 = new Child();// method hiding instead of overriding
+        System.out.println();
+
+
         String str = "qwertytrewq";
 
         Map<Character, Long> hmap = str.chars()
@@ -148,5 +152,16 @@ class MyClass{
         return "MyClass{" +
                 "a=" + a +
                 '}';
+    }
+}
+
+class Base{
+    public static void hello(){
+        System.out.print("Base::Hello");
+    }
+}
+class Child extends Base{
+    public static void hello(){
+        System.out.print("Child::Hello");
     }
 }

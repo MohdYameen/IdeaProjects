@@ -16,6 +16,7 @@ How to do Reflection?  many-many .get methods available
             Class.forName("Bird), Class birdClass = Bird.class, birdObj.getClass()
     2. Create object of Object :
             Object birdObj = birdClass.newInstance();
+            If constructor is private, create cont using birdClass.getDeclaredContructor(); cont.setAccessible(true);
     3. Create method :
             Method method = birdClass.getMethod("methodName");
     4. Invoke method: only methods can be invoked

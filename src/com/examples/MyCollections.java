@@ -24,14 +24,14 @@ PriorityQueue : <<Implemented Class>>, min heap and max heap imp using priority 
          new PriorityQueue((Integer a, Integer b) -> b-a); to change from default to max heap
          PriorityBlockingQueue : Thread safe version
 
-Comparable : (java.lang)Both helps in sorting collection of objects
+Comparable : (java.lang) Both helps in sorting collection of objects
         obj1.carName.compareTo(obj2.carName)
         sorting can be done for single field type
         better to use lambda expression
 
 Comparator : (java.util) <<FUNCTIONAL INTERFACE>>, many options
             compare(T o1, T o2)  >> swap only if method return 1, o1 > o2 return 1
-                use merge sort internally, swap only if val1-val2 is greater than 0. for descedning order (val2-val1)
+                use merge sort internally, swap only if val1-val2 is greater than 0. for descending order (val2-val1)
                 better to use lambda expression or by implementing Comparator<Car> class
 
 
@@ -61,7 +61,7 @@ HashMap : , default capacity:16(0-15)
     ConcurrentHashMap : thread safe version
 
     load factor : 0.75f default, percentage of buckets to be filled before increasing size of hashmap
-    Treefy : threashold is 8, convert it into red black tree, if hashmap size is 64, else rehash
+    Treeify : threshold is 8, convert it into red black tree, if hashmap size is 64, else rehash
     Entry<K, V> interface : sub interface of Map interface
     re-hashing :
     performance :
@@ -71,8 +71,8 @@ HashMap : , default capacity:16(0-15)
 
     Q. How operations are O(1) in hashmap? worst is O(n)
         //If hashcode return same hash for all/many keys,
-        Load factor help us with it, making O(1) comp for operations. If will do rehash once LF*size(0.75 * 16 =12), it will rehash
-        After reaching treefy threshold, it gets converted into red black tree
+        Load factor help us with it, making O(1) comp for operations. If you do rehash once LF*size(0.75 * 16 =12), it will rehash
+        After reaching treeify threshold, it gets converted into red black tree
 
     Q. why it cannot contain dup keys?
         Design principle of HashMap. Used hash table
@@ -105,14 +105,12 @@ TreeSet: same as treeMap, only contains value not key-value pair
 LinkedHashSet : same as LinkedHashMap, only value as key
 
 
- */
+*/
 
-import java.util.HashMap;
 
 public class MyCollections {
 
     public static void main(String[] args) {
 
-//        HashMap
     }
 }

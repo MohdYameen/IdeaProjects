@@ -57,6 +57,34 @@ public class Solution2 {
     public static void main(String[] args) {
         System.out.println(missingDigits("324", 2, 3)); // Output: 36924
         System.out.println(missingDigits("521", 5, 5)); // Output: -1
+
+        int[] arr = {-7, 4, 1, 5, 2, -4, 2, 5, 0};
+
+        System.out.println("eq index : "+findEquilibirumIndex(arr));
+
+
+    }
+
+
+    public static int findEquilibirumIndex(int [] arr){
+        int totalSum=0;
+        for(int i:arr){
+            totalSum+=i;
+        }
+
+
+        int leftSum = 0;
+
+        for(int i=0;i<arr.length;i++){
+            int rightSum = totalSum - leftSum - arr[i];
+            if(leftSum == rightSum)
+                return i;
+
+            leftSum+=arr[i];
+        }
+
+        return -1;
+
     }
 }
 
