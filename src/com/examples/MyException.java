@@ -6,11 +6,17 @@ package com.examples;
 Exception : event that occurred in case something in our program goes wrong
             Exception, Message and Stack Trace
 
-Error vs Exception:
+Error vs Exception: both are subclasses of Throwable
+    Error : is a serious problem that program cannot recover from, caused by system level issues
+            eg. OutOfMemory, StackOverflow
+    Exceptions :
 
 Object -> Throwable (2 child)
             1. Error        : JVM issues, can not be controlled by us. OutOfMemoryError and StackOverflowError (Runtime/Unchecked Exception)
-            2. Exception    : 2 types, Checked(Compiletime) and Unchecked(Runtime)
+                            : is a serious problem that program cannot recover from, caused by system level issues
+                            eg. OutOfMemory, StackOverflow
+            2. Exception    : represent recoverable condition in a program, can be caught and handled using try-catch block.
+                            2 types, Checked(Compile time : IOEx, SQLEx,ClassNotFoundEx) and Unchecked(Runtime" ArithematicEx, NullPointerEx, ArrayIndexOutOfBondEx)
 
 Checked Exception :
     Checked at compile time

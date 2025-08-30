@@ -35,11 +35,9 @@ public class CompareBinaryToHexa {
         while(n != 0){
             if(n%2==1){
                 s+='1';
-//                System.out.println("adde 1");
             }
             else
                 s+='0';
-
             n/=2;
         }
 
@@ -54,6 +52,19 @@ public class CompareBinaryToHexa {
 
         return sol;
 
+    }
+
+    public static int binaryToDecimal(String s){
+        int pow=0;
+        int value=0;
+
+        for(int i=s.length()-1;i>=0;i--){
+            int curr = s.charAt(i) - '0';
+            System.out.println("char  at i :"+i+" i is "+curr);
+            value+= curr * Math.pow(2,pow++);
+        }
+
+        return value;
 
     }
 
@@ -65,5 +76,7 @@ public class CompareBinaryToHexa {
 //        // both string in decimal are equals to 22.
 //        System.out.println(compareBinToHex("10110", "16"));
         System.out.println("int to binary : "+intToBinary(8));
+
+        System.out.println(binaryToDecimal("1001"));
     }
 }

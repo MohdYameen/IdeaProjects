@@ -1,6 +1,6 @@
 package com.yameen;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Anagram {
 
@@ -31,8 +31,23 @@ public class Anagram {
         return true;
     }
 
-    public static void main(String args[])
-    {
+
+    public static List<List<String>> groupAnagrams(String [] words){
+        Map<String, List<String>> map = new HashMap<>();
+
+        for(String s:words){
+            char [] chArray = s.toCharArray();
+            Arrays.sort(chArray);
+            String key = new String(chArray);
+
+            map.computeIfAbsent(key,  k ->new ArrayList<>()).add(s);
+        }
+
+        return new ArrayList<>(map.values());
+    }
+
+
+    public static void main(String args[]) {
         String s1 = "yameen";
         String s2 = "nyeema";
 
@@ -40,6 +55,13 @@ public class Anagram {
             System.out.println("Anagram");
         else
             System.out.println("Not Anagram");
+
+
+        String[] words = {"eat", "tea", "tan", "ate", "nat", "bat"};
+
+        System.out.println(groupAnagrams(words));
+
+
     }
 
 }

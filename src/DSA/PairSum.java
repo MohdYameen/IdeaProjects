@@ -27,6 +27,6 @@ public class PairSum {
         arr.add(5);
         arr.add(6);
 
-        System.out.println(isPairSumExist(arr, 1));
+        System.out.println(isPairSumExist(arr, 7));
     }
 }
