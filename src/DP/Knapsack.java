@@ -8,15 +8,10 @@ public class Knapsack {
         //regular recursion
         if(capacity == 0 || n == 0) return 0;
         if(wt[n-1] <= capacity){
-            //include
-            int ans1= val[n-1] + knapsack(val, wt, capacity-wt[n-1], n-1);
-            //exclude
-            int ans2 = knapsack(val, wt, capacity, n-1);
-
-            return Math.max(ans1, ans2);
-        } else {
-            return knapsack(val, wt, capacity, n-1);
-        }
+            int include= val[n-1] + knapsack(val, wt, capacity-wt[n-1], n-1); //include
+            int exclude = knapsack(val, wt, capacity, n-1); // exclude
+            return Math.max(include, exclude);
+        } else return knapsack(val, wt, capacity, n-1);
     }
 
     public static int knapsackMemoization(int [] val, int [] wt, int capacity, int n, int [][]dp){

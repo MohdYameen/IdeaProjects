@@ -54,13 +54,30 @@ public class Solution2 {
         return "-1";
     }
 
+    public static boolean isGoodString(String s){
+        int countVowels =0, countConsonants = 0;
+        for(char c : s.toCharArray()){
+            if(c == 'a' || c== 'e' || c =='i'|| c=='o'|| c=='u'){
+                countVowels++;
+                countConsonants = 0;
+                if(countVowels >= 3) return false;
+            } else{
+                countConsonants++;
+                countVowels=0;
+                if(countConsonants>=5) return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        System.out.println(missingDigits("324", 2, 3)); // Output: 36924
-        System.out.println(missingDigits("521", 5, 5)); // Output: -1
-
-        int[] arr = {-7, 4, 1, 5, 2, -4, 2, 5, 0};
-
-        System.out.println("eq index : "+findEquilibirumIndex(arr));
+//        System.out.println(missingDigits("324", 2, 3)); // Output: 36924
+//        System.out.println(missingDigits("521", 5, 5)); // Output: -1
+//
+//        int[] arr = {-7, 4, 1, 5, 2, -4, 2, 5, 0};
+//
+//        System.out.println("eq index : "+findEquilibirumIndex(arr));
+        System.out.println(isGoodString("int"));
 
 
     }
@@ -72,14 +89,11 @@ public class Solution2 {
             totalSum+=i;
         }
 
-
         int leftSum = 0;
-
         for(int i=0;i<arr.length;i++){
             int rightSum = totalSum - leftSum - arr[i];
             if(leftSum == rightSum)
                 return i;
-
             leftSum+=arr[i];
         }
 

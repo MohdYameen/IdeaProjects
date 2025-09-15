@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class CharFreqCount {
 
@@ -27,6 +29,7 @@ public class CharFreqCount {
         for(char c: s.toCharArray()){
             hashMap.put(c, hashMap.getOrDefault(c, 0)+1);
         }
+
         int index = 0;
         for(char c: s.toCharArray()){
             if(hashMap.get(c)==1){
@@ -37,7 +40,18 @@ public class CharFreqCount {
         }
 
         return -1;
+    }
 
+    public static int findFirstNonRCI(String s){
+        Map<Character, Long> map = s.chars()
+                .mapToObj(c-> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        for(int i=0;i<s.length();i++){
+            if(map.get(s.charAt(i)) == 1)
+                return i;
+        }
+        return -1;
     }
 
     public static void inOrder(TreeNode root){
@@ -65,14 +79,15 @@ public class CharFreqCount {
         String s = "abcdadcbadbkc";
         System.out.println(freqChecker(s));
         System.out.println(firstNonRepeatingChar(s));
+        System.out.println(findFirstNonRCI(s));
 
-        TreeNode root = new TreeNode(10);
-        root.right = new TreeNode(20);
-
-        inOrder(root);
-
-        System.out.println("after left rot");
-        inOrder(leftRot(root));
+//        TreeNode root = new TreeNode(10);
+//        root.right = new TreeNode(20);
+//
+//        inOrder(root);
+//
+//        System.out.println("after left rot");
+//        inOrder(leftRot(root));
 
 
 

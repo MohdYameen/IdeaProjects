@@ -1,9 +1,27 @@
 package Recursion;
 
+import java.util.HashMap;
+
 public class Factorial {
 
+    static HashMap<Integer, Integer> hmap = new HashMap<>();
+
+    public static int printFactorialUsingHMap(int n){
+        if(n <= 0) return 0;
+        if(n==1){
+            return n;
+        }
+        if(hmap.containsKey(n)){
+            System.out.println("Printed from cached hmap");
+            return hmap.get(n);
+        }
+        int result =  n*printFactorial(n-1);
+        hmap.put(n, result);
+        System.out.println("Calculated new and added to hashmap");
+        return result;
+    }
+
     public static int printFactorial(int n){
-        // for negative numbers
         if(n <= 0) return 0;
         if(n==1){
             return n;
@@ -47,7 +65,10 @@ public class Factorial {
         //System.out.println(printSumofNaturalNumbers(5));
         //printSumofNaturalNumbers(5);
         //System.out.println(printNthFabonacciNumber(5));
-        System.out.println(printNumberPower(2,10));
+//        System.out.println(printNumberPower(2,10));
+        System.out.println(printFactorialUsingHMap(5));
+        System.out.println(printFactorialUsingHMap(4));
+        System.out.println(printFactorialUsingHMap(4));
 
     }
 }

@@ -28,7 +28,7 @@ public class CoinChange {
     }
     public static void main(String[] args) {
         int [] coins = {2,5,1};
-        int sum = 3;
+        int sum = 1;
         System.out.println(numberOfWays(coins, sum));
 
 

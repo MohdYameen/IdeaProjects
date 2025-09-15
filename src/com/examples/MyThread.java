@@ -17,18 +17,17 @@ java -Xms256m -Xmx2g Test
 
 **Thread Creation** :
 
-1. Runnable interface : functional interface, with method named "run". Normal class, not just thread.
+    1. Runnable interface : functional interface, with method named "run". Normal class, not just thread.
 
-create class that imp Runnable interface with run method overridden.
-create an object of this class, create thread with this runnable object as argument.
-thread.start(); -> this method will invoke run method
-//preferred normally
+    create class that imp Runnable interface with run method overridden.
+    create an object of this class, create thread with this runnable object as argument.
+    thread.start(); -> this method will invoke run method
+    preferred normally
+    used  to imp multiple classes, if our clas is using inheritance,
 
-used  to imp multiple classes, if our clas is using inheritance,
-
-2. Thread class : class created by ext Thread class, this class now becomes thread class.
-create obj of this class and execute obj.start() to invoke run method.
-If run method is not overridden in this class, it will call default run method which will do nothing and return.
+    2. Thread class : class created by ext Thread class, this class now becomes thread class.
+    create obj of this class and execute obj.start() to invoke run method.
+    If run method is not overridden in this class, it will call default run method which will do nothing and return.
 
 
 **Lifecycle of thread:**
@@ -76,11 +75,11 @@ ex : Create an object, create 3 thread, all three thread work on same object
 deamon thread is only alive only till user thread is alive, ex. garbage collector, autosave in IDE.
 
 
-Locks and Semaphores: no synconized block/mthod, only one thread should be able to access critical section
+Locks and Semaphores: no syncronized block/method, only one thread should be able to access critical section
 1. Reentrant lock : get lock object as input for critical method
 2. ReadWrite : Shared lock for read, exclusive lock for write
 3. StampedLock : read/write lock + optimistic(no lock acquired) read
-4. Semaphores : Semaphone lock = new Semaphone(permits: 2), 2 threads can acquire the lock, more than one thread can access, ex. connection pool
+4. Semaphores : Semaphore lock = new Semaphore(permits: 2), 2 threads can acquire the lock, more than one thread can access, ex. connection pool
 
 Condition :
 await() = wait()
@@ -97,7 +96,7 @@ AtomicReference
 Specific use cases :
 
 
-Atomic : Thread Saftey operations
+Atomic : Thread Safety operations
 
 Volatile :
     volatile fields used with var, that is being consumed by multiple thread, its updated value is visible to all theads
@@ -231,7 +230,15 @@ Normal(Platform) Thread :
                  System call, expensive task
 
 
+CyclicBarrier :
+    used to make threads wait for each other. When different threads process a part of the computation, all thread have completed the execution
+    the result need to be combined in the parent thread.
+    CyclicBarrier newCB = new CyclicBarrier(numberOfThreads);
+    newCB.await(); // in all threads
 
+CountDownLatch :
+    used to make sure that a task waits for other threads before it starts
+    eg. server where the main git status can only start when all required services have started.
 
 
  */

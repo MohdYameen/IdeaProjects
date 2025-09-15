@@ -118,6 +118,17 @@ public class MyStream {
 
         System.out.println("after : "+sqList);
 
+        int [] newArray = {1,2,3,4,5,4,3,2,34,5,68,7};
+
+        List<Integer> distList= Arrays.stream(newArray)
+                .boxed()
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(distList);
+
+
+
 
 
 

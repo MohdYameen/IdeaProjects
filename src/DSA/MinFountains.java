@@ -4,15 +4,18 @@ public class MinFountains {
 
     public static int minNoOfFountains(int [] arr){
 
-        int n = arr.length-1, maxRange [] = new int[n+1], fountains = 0, currEnd = 0, nextEnd = 0;
+        int n = arr.length-1;
+        int maxRange [] = new int[n+1];
+        int fountains = 0, currEnd = 0, nextEnd = 0;
+
         for(int i=0;i<=n;i++){
             int left = Math.max(0, i-arr[i]);
             int right = Math.min(n, i+arr[i]);
             maxRange[left] = Math.max(maxRange[left], right);
         }
+
         for(int i=0; i<n; i++){
             nextEnd = Math.max(nextEnd, maxRange[i]);
-
             if(i==currEnd){
                 fountains++;
                 currEnd=nextEnd;

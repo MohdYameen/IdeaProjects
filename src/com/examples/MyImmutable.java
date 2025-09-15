@@ -31,6 +31,8 @@ public class MyImmutable {
         hmap.put(imClass, "Engineer");
         hmap.put(imClass2, "Student");
         hmap.put(imClass3, "Teacher");
+//        hmap.put(null, "qwerty");
+//        hmap.put(null, "asdfgh"); // null key worked as usual, get replaced
 
 
         System.out.println("Hashmap : " + hmap);

@@ -1,5 +1,8 @@
 package DSA;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class ZigzagConversion {
 
     public static String convert(String s, int numRows){
@@ -54,9 +57,24 @@ public class ZigzagConversion {
 
     public static void main(String[] args) {
         String s = "PAYPALISHIRING";
-        System.out.println(convert(s, 5));
+        String yam = "mynameisyameen";
+        System.out.println(convert(yam, 5));
         System.out.println("new");
         System.out.println(convert1(s, 5));
+
+        Set<Integer> revOrderSet = new LinkedHashSet<>();
+        revOrderSet.add(5);
+        revOrderSet.add(3);
+        revOrderSet.add(1);
+        revOrderSet.add(4);
+        System.out.println(revOrderSet);
+        ArrayList<Integer> arrayList = new ArrayList<>(revOrderSet);
+        Collections.reverse(arrayList);
+//
+//        for(Integer i: revOrderSet){
+//            System.out.println(i);
+//
+//        }
 
     }
 }
